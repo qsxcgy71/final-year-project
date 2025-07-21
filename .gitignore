@@ -1,0 +1,71 @@
+# χ²-DFD 深度伪造检测系统 - Git忽略文件
+
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+env/
+venv/
+deepfake_env/
+.env
+
+# 模型和数据文件
+*.pth
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# 结果文件
+results_*.json
+测试验证报告.json
+基础测试报告.json
+
+# 临时文件
+*.tmp
+*.temp
+temp/
+.temp/
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+logs/
+
+# 大文件和下载
+downloads/
+*.zip
+*.tar.gz
+
+# Shell输出
+shell_output_save/
+
+# 浏览器文件
+browser/
+
+# 提取文件
+extract/
+
+# 用户输入文件
+user_input_files/
+
+# 文档生成文件
+*.pdf
+*.docx
