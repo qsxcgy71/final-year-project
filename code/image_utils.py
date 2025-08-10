@@ -75,7 +75,11 @@ class ImageProcessor:
 
 def get_test_images():
     """获取测试图像列表"""
-    test_dir = "/workspace/data/test_images"
+    # 获取当前脚本所在目录的父目录
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(current_dir)
+    test_dir = os.path.join(project_root, "data", "test_images")
+    
     if not os.path.exists(test_dir):
         return []
     
