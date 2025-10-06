@@ -69,3 +69,7 @@ user_input_files/
 # 文档生成文件
 *.pdf
 *.docx
+data/processed/
+data/ffpp_c23/
+data/celeb_df_v2/
+llava-7b-local-test/

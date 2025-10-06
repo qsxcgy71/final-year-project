@@ -1,0 +1,95 @@
+{
+  "top_features": [
+    {
+      "id": "facial_symmetry",
+      "category": "Symmetry",
+      "question_en": "Is facial symmetry noticeably abnormal? Please answer yes or no.",
+      "question_zh": "脸部左右对称性是否明显异常？请回答是或否。",
+      "val_balanced_accuracy": 0.6162,
+      "test_balanced_accuracy": 0.6304,
+      "avg_balanced_accuracy": 0.6233
+    },
+    {
+      "id": "shadow_anomaly",
+      "category": "Lighting",
+      "question_en": "Are nose or chin shadows missing or oddly shaped? Please answer yes or no.",
+      "question_zh": "鼻翼或下巴阴影是否缺失或形状异常？请回答是或否。",
+      "val_balanced_accuracy": 0.62,
+      "test_balanced_accuracy": 0.6088,
+      "avg_balanced_accuracy": 0.6144000000000001
+    },
+    {
+      "id": "hairline_artifact",
+      "category": "Hair",
+      "question_en": "Is there smearing or transparency around the hairline? Please answer yes or no.",
+      "question_zh": "额头与发际交界是否有涂抹或透明感伪影？请回答是或否。",
+      "val_balanced_accuracy": 0.5713,
+      "test_balanced_accuracy": 0.5775,
+      "avg_balanced_accuracy": 0.5744
+    },
+    {
+      "id": "edge_color_bleeding",
+      "category": "Color",
+      "question_en": "Is there color bleeding along facial edges? Please answer yes or no.",
+      "question_zh": "脸部边缘是否出现颜色渗出？请回答是或否。",
+      "val_balanced_accuracy": 0.5563,
+      "test_balanced_accuracy": 0.5463,
+      "avg_balanced_accuracy": 0.5513
+    },
+    {
+      "id": "feature_perspective",
+      "category": "Geometry",
+      "question_en": "Are facial features perspectively inconsistent, such as unusually tilted eye lines? Please answer yes or no.",
+      "question_zh": "五官在透视上是否不一致（例如双眼水平线倾斜异常）？请回答是或否。",
+      "val_balanced_accuracy": 0.5312,
+      "test_balanced_accuracy": 0.5387,
+      "avg_balanced_accuracy": 0.53495
+    },
+    {
+      "id": "compression_inconsistency",
+      "category": "Signal",
+      "question_en": "Is compression blocking stronger on the face than the background? Please answer yes or no.",
+      "question_zh": "脸与背景的压缩块效是否不一致？请回答是或否。",
+      "val_balanced_accuracy": 0.5288,
+      "test_balanced_accuracy": 0.5287,
+      "avg_balanced_accuracy": 0.52875
+    },
+    {
+      "id": "teeth_boundary_drift",
+      "category": "Mouth",
+      "question_en": "Do tooth boundaries drift in frames where the mouth is speaking or open? Please answer yes or no.",
+      "question_zh": "说话或张口的帧中牙齿边界是否漂移？请回答是或否。",
+      "val_balanced_accuracy": 0.5232,
+      "test_balanced_accuracy": 0.5097,
+      "avg_balanced_accuracy": 0.5164500000000001
+    },
+    {
+      "id": "skin_texture_repeat",
+      "category": "Texture",
+      "question_en": "Do pores or micro-textures repeat or look smeared across different facial regions? Please answer yes or no.",
+      "question_zh": "皮肤毛孔或微纹理是否在不同区域重复或涂抹感强？请回答是或否。",
+      "val_balanced_accuracy": 0.5125,
+      "test_balanced_accuracy": 0.5125,
+      "avg_balanced_accuracy": 0.5125
+    },
+    {
+      "id": "feature_proportions",
+      "category": "Symmetry",
+      "question_en": "Are facial feature proportions atypical, such as unusual inter-ocular distance or nose length? Please answer yes or no.",
+      "question_zh": "五官相对布局是否偏离常规比例（如眼距或鼻长）？请回答是或否。",
+      "val_balanced_accuracy": 0.5097,
+      "test_balanced_accuracy": 0.5152,
+      "avg_balanced_accuracy": 0.5124500000000001
+    },
+    {
+      "id": "jawline_seams",
+      "category": "Blending",
+      "question_en": "Are there seam-like artifacts around the jawline or hairline? Please answer yes or no.",
+      "question_zh": "下颌线或发际处是否有缝隙或接缝状伪影？请回答是或否。",
+      "val_balanced_accuracy": 0.5088,
+      "test_balanced_accuracy": 0.5125,
+      "avg_balanced_accuracy": 0.51065
+    }
+  ],
+  "total_features": 20
+}

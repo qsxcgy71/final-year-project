@@ -1,218 +1,36 @@
-# 贡献指南 / Contributing Guide
+﻿# Contributing Guide
 
-感谢您对 χ²-DFD 深度伪造检测系统的关注！我们欢迎所有形式的贡献。
+感谢你对 χ²-DFD 深度伪造检测系统复现项目的关注！本仓库当前聚焦于 MFA 模块和大规模数据实验，欢迎通过 Issue / PR 反馈问题与改进建议。
 
-## 🤝 如何贡献
+## 🙋‍♀️ 提交 Issue
+- 复现问题：请附带操作系统、Python 版本、GPU/驱动、`pip list` 核心依赖、错误日志。
+- 新功能建议：描述目标、预期收益及可能的实现思路。
+- 数据问题：如发现划分异常或统计错误，请注明对应文件（如 `metadata/mfa_ffpp_val_progress.jsonl` 的行号）。
 
-### 报告问题 / Reporting Issues
+## 🧩 Pull Request 流程
+1. Fork 仓库并创建新分支。
+2. 确保代码遵循现有风格：
+   - Python 使用 `black`/`isort` 风格（4 spaces）。
+   - 文档使用 Markdown，保持中英混排语句通顺。
+3. 运行必要脚本：
+   - 若修改了抽帧或 MFA 逻辑，请至少在 `--limit 10` 场景下验证。
+4. 更新相关文档（如 README / 指南 / 变更日志）。
+5. 提交 PR 时附：改动摘要、测试方式、影响范围。
 
-如果您发现了bug或有功能建议，请：
+## 📦 大文件与数据策略
+- 请 **不要** 在 PR 中上传以下内容：
+  - `data/ffpp_c23/`、`data/celeb_df_v2/`、`data/processed/`
+  - `models/` 下的权重文件
+  - 临时日志或超过 5MB 的二进制文件
+- 如果需要共享示例，请提供可下载链接或将小规模样本加入 `data/sample/`（需提前讨论）。
 
-1. 检查是否已有相似的issue
-2. 创建新的issue，包含：
-   - 清晰的标题和描述
-   - 复现步骤（如果是bug）
-   - 期望的行为
-   - 实际发生的行为
-   - 系统环境信息
+## 🧪 本地验证清单
+- `python code/mfa_metadata.py` — 验证划分脚本正常。
+- `python code/extract_ffpp_frames.py --split val --limit 5` — 验证抽帧流程。
+- `python code/run_mfa_ffpp.py --split val --limit 5 --progress-interval 1` — 验证 LLaVA 推理与进度日志。
 
-### 提交代码 / Submitting Code
+## 🔐 访问权限
+- 本地量化模型及数据需自行下载，仓库不会提供重量级文件。
+- 若涉及凭证（如 HuggingFace Token），请放置在环境变量或 `.env` 文件，勿提交到 Git。
 
-1. **Fork 项目**
-   ```bash
-   git clone https://github.com/qsxcgy71/final-year-project.git
-   ```
-
-2. **创建分支**
-   ```bash
-   git checkout -b feature/your-feature-name
-   # 或
-   git checkout -b bugfix/your-bugfix-name
-   ```
-
-3. **编写代码**
-   - 遵循现有的代码风格
-   - 添加必要的注释
-   - 更新相关文档
-
-4. **测试**
-   ```bash
-   python code/basic_test.py
-   python code/test_validation.py
-   ```
-
-5. **提交更改**
-   ```bash
-   git add .
-   git commit -m "feat: 添加新功能描述"
-   # 或
-   git commit -m "fix: 修复bug描述"
-   ```
-
-6. **推送分支**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-7. **创建Pull Request**
-   - 填写清晰的PR描述
-   - 链接相关的issue
-   - 确保所有检查通过
-
-## 📝 代码规范
-
-### Python代码风格
-
-- 使用4个空格缩进
-- 行长度不超过88字符
-- 遵循PEP 8规范
-- 使用有意义的变量名和函数名
-
-### 注释规范
-
-```python
-def detect_deepfake(image_path):
-    """
-    检测图像是否为深度伪造
-    
-    Args:
-        image_path (str): 图像文件路径
-        
-    Returns:
-        dict: 包含检测结果的字典
-    """
-    pass
-```
-
-### 提交信息格式
-
-使用conventional commits格式：
-
-- `feat: 添加新功能`
-- `fix: 修复bug`
-- `docs: 更新文档`
-- `style: 代码格式调整`
-- `refactor: 重构代码`
-- `test: 添加测试`
-- `chore: 维护性任务`
-
-## 🧪 测试
-
-在提交PR前，请确保：
-
-1. **基础测试通过**
-   ```bash
-   python code/basic_test.py
-   ```
-
-2. **功能测试通过**
-   ```bash
-   python code/test_validation.py
-   ```
-
-3. **代码检测工具**
-   ```bash
-   # 安装检测工具
-   pip install flake8 black
-
-   # 代码格式化
-   black code/
-
-   # 代码检查
-   flake8 code/
-   ```
-
-## 📚 文档贡献
-
-文档同样重要！您可以：
-
-- 改进现有文档的清晰度
-- 添加使用示例
-- 翻译文档到其他语言
-- 修复文档中的错误
-
-## 🎯 贡献领域
-
-我们特别欢迎以下方面的贡献：
-
-### 核心功能
-- 模型性能优化
-- 新的特征检测算法
-- 更好的解释性方法
-- 支持更多图像格式
-
-### 用户体验
-- GUI界面开发
-- Web界面实现
-- 移动端适配
-- 性能监控
-
-### 测试和质量
-- 增加测试覆盖率
-- 性能基准测试
-- 持续集成配置
-- 代码质量工具
-
-### 文档和示例
-- API文档完善
-- 使用教程
-- 最佳实践指南
-- 视频教程
-
-## 🏆 贡献者认可
-
-所有贡献者都会在项目中得到认可：
-
-- README.md中的贡献者列表
-- 发布说明中的致谢
-- 特殊徽章和荣誉
-
-## 📞 联系方式
-
-如果您有任何问题：
-
-- 创建GitHub Issue
-- 参与GitHub Discussions
-- 发送邮件（如果有公开邮箱）
-
-## 📋 开发环境设置
-
-```bash
-# 1. 克隆项目
-git clone https://github.com/qsxcgy71/final-year-project.git
-cd final-year-project
-
-# 2. 创建开发环境
-python -m venv dev_env
-source dev_env/bin/activate  # Linux/macOS
-# 或 dev_env\Scripts\activate  # Windows
-
-# 3. 安装开发依赖
-pip install -r requirements.txt
-pip install -r requirements-dev.txt  # 如果有开发依赖
-
-# 4. 安装pre-commit钩子
-pip install pre-commit
-pre-commit install
-
-# 5. 运行测试确保环境正常
-python code/basic_test.py
-```
-
-## 🚫 不接受的贡献
-
-请避免：
-
-- 恶意代码或后门
-- 侵犯版权的内容
-- 不相关的功能
-- 破坏性的重构（没有充分讨论）
-- 违反开源协议的代码
-
-## 🎉 感谢
-
-感谢每一位贡献者让这个项目变得更好！
-
----
-
-*此贡献指南会根据项目发展持续更新*
+如有更多问题，欢迎在 Issue 中交流或与维护者联系。谢谢！

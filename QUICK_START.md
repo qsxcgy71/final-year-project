@@ -1,77 +1,61 @@
-# χ²-DFD 快速开始指南
+﻿# QUICK START
 
-## 🚀 5分钟快速启动
+> 目标：在本地环境中完成 χ²-DFD 的 MFA 复现流程，包括数据划分、抽帧裁脸、LLaVA 推理与特征排序。
 
-### 1. 克隆项目
+## 1. 准备环境
 ```bash
-git clone https://github.com/qsxcgy71/final-year-project.git
-cd final-year-project
-```
+python -m venv deepfake_env
+# Windows
+deepfake_env\Scripts\activate
+# Linux/macOS
+source deepfake_env/bin/activate
 
-### 2. 安装依赖
-```bash
 pip install -r requirements.txt
+pip install insightface onnxruntime-gpu
 ```
 
-### 3. 运行检测
+## 2. 准备数据
+1. 下载 FaceForensics++ (c23) 并解压至 `data/ffpp_c23/`。
+2. （可选）下载 Celeb-DF(v2) 至 `data/celeb_df_v2/`。
+3. 下载 LLaVA-1.5-7B 模型权重到 `models/llava-1.5-7b-hf/`（可使用 `scripts/download_llava_cpu.py`）。
+
+## 3. 生成元数据
 ```bash
-# 检测所有测试图像
-python code/main_detector.py
-
-# 或检测指定图像
-python code/main_detector.py path/to/your/image.jpg
+python code/mfa_metadata.py
 ```
+输出：`metadata/ffpp_c23_split.json`，包含 4000/500/500 的 train/val/test 划分。
 
-## 📊 预期输出
-
-```
-🔍 χ²-DFD 深度伪造检测系统
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⚠️ χ²-DFD 深度伪造检测结果 ⚠️
-
-📄 图像: fake_face_1.jpg
-🎯 判断: 可能伪造
-📊 伪造概率: 41.42%
-🔍 置信度: 中
-
-🔍 可疑特征:
-  • 鼻子(分数: 0.45)
-  • 面部对称性(分数: 0.42)
-  • 面部布局(分数: 0.30)
-
-✅ 正常特征:
-  • 面部边界融合(分数: 0.87)
-  • 眼睛(分数: 0.75)
-  • 光照阴影(分数: 0.72)
-```
-
-## 🧪 运行测试
-
+## 4. 抽帧与裁脸
 ```bash
-# 基础结构测试
-python code/basic_test.py
+python code/extract_ffpp_frames.py --split train
+python code/extract_ffpp_frames.py --split val
+python code/extract_ffpp_frames.py --split test
+# 额外伪造方法（FaceShifter / DeepFakeDetection）
+python code/extract_ffpp_frames.py --split extra --include-extra
+```
+缓存存放于 `data/processed/ffpp_c23/faces_224/` 与 `raw_frames/`，脚本支持重复运行覆盖。
 
-# 完整功能测试  
-python code/test_validation.py
+## 5. 运行 MFA（可断点续跑）
+```bash
+python code/run_mfa_ffpp.py --split val  --model-dir models/llava-1.5-7b-hf --quant 4bit --progress-interval 20
+python code/run_mfa_ffpp.py --split test --model-dir models/llava-1.5-7b-hf --quant 4bit --progress-interval 20
+```
+- 进度日志：`metadata/mfa_ffpp_<split>_progress.jsonl`
+- 中断后重复执行同一命令即可续跑。
+
+## 6. 查看结果
+```bash
+# Top-K 特征
+cat metadata/mfa_feature_rankings.json
+
+# 完整问题统计
+cat metadata/mfa_ffpp_val.json
+cat metadata/mfa_ffpp_test.json
 ```
 
-## 🆘 常见问题
+## 7. 常见问题
+- **模型加载慢**：首次量化加载约 30~40 s，随后推理耗时较长（建议保持命令运行）。
+- **InsightFace 未安装**：确保已安装 `insightface` + `onnxruntime-gpu`，并具备 Microsoft Visual C++ Build Tools。
+- **数据未提交**：`data/ffpp_c23/`、`data/celeb_df_v2/`、`data/processed/` 均被 `.gitignore` 忽略，避免误传 Git 远程仓库。
 
-**Q: 安装依赖失败？**
-A: 升级pip后重试：`pip install --upgrade pip`
-
-**Q: 图像加载失败？**  
-A: 确保图像路径正确，支持JPG/PNG格式
-
-**Q: 内存不足？**
-A: 使用较小图像测试，关闭其他程序
-
-## 📚 详细文档
-
-- `项目总结报告.md` - 完整技术文档
-- `本地运行指南.md` - 详细安装说明
-- `deploy_to_github.md` - GitHub部署指南
-
----
-🎯 χ²-DFD: 可解释可扩展的深度伪造检测系统
+完成以上步骤后，即可得到论文中 MFA 模块的复现结果，并据此继续后续的 MFC/MHR 研究。

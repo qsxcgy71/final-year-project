@@ -1,0 +1,21 @@
+id,category,question_en,question_zh,balanced_accuracy,tp,tn,fp,fn,yes_rate_fake,yes_rate_real
+shadow_anomaly,Lighting,Are nose or chin shadows missing or oddly shaped? Please answer yes or no.,鼻翼或下巴阴影是否缺失或形状异常？请回答是或否。,0.62,104,98,2,296,0.26,0.02
+facial_symmetry,Symmetry,Is facial symmetry noticeably abnormal? Please answer yes or no.,脸部左右对称性是否明显异常？请回答是或否。,0.6162,109,96,4,291,0.2725,0.04
+hairline_artifact,Hair,Is there smearing or transparency around the hairline? Please answer yes or no.,额头与发际交界是否有涂抹或透明感伪影？请回答是或否。,0.5713,77,95,5,323,0.1925,0.05
+edge_color_bleeding,Color,Is there color bleeding along facial edges? Please answer yes or no.,脸部边缘是否出现颜色渗出？请回答是或否。,0.5563,57,97,3,343,0.1425,0.03
+feature_perspective,Geometry,Are facial features perspectively inconsistent, such as unusually tilted eye lines? Please answer yes or no.,五官在透视上是否不一致（例如双眼水平线倾斜异常）？请回答是或否。,0.5312,29,99,1,371,0.0725,0.01
+compression_inconsistency,Signal,Is compression blocking stronger on the face than the background? Please answer yes or no.,脸与背景的压缩块效是否不一致？请回答是或否。,0.5288,295,32,68,105,0.7375,0.68
+teeth_boundary_drift,Mouth,Do tooth boundaries drift in frames where the mouth is speaking or open? Please answer yes or no.,说话或张口的帧中牙齿边界是否漂移？请回答是或否。,0.5232,362,14,85,38,0.905,0.8586
+lighting_direction,Lighting,Is the facial lighting direction inconsistent with the shadows in the background? Please answer yes or no.,脸部主光方向是否与背景投影方向不一致？请回答是或否。,0.5162,13,100,0,387,0.0325,0.0
+moire_artifact,Signal,Are there moiré or checkerboard artifacts in facial regions? Please answer yes or no.,面部区域是否存在莫尔纹或棋盘格等频域伪影？请回答是或否。,0.5138,11,100,0,389,0.0275,0.0
+skin_texture_repeat,Texture,Do pores or micro-textures repeat or look smeared across different facial regions? Please answer yes or no.,皮肤毛孔或微纹理是否在不同区域重复或涂抹感强？请回答是或否。,0.5125,10,100,0,390,0.025,0.0
+feature_proportions,Symmetry,Are facial feature proportions atypical, such as unusual inter-ocular distance or nose length? Please answer yes or no.,五官相对布局是否偏离常规比例（如眼距或鼻长）？请回答是或否。,0.5097,11,88,1,348,0.0306,0.0112
+jawline_seams,Blending,Are there seam-like artifacts around the jawline or hairline? Please answer yes or no.,下颌线或发际处是否有缝隙或接缝状伪影？请回答是或否。,0.5088,19,97,3,381,0.0475,0.03
+eye_highlight_mismatch,Eyes,Do the specular highlights of both eyes mismatch in shape or position? Please answer yes or no.,双眼高光形状或位置是否不匹配？请回答是或否。,0.5062,5,100,0,395,0.0125,0.0
+skin_color_patches,Texture,Are there patchy skin tones or abrupt color bands on the face? Please answer yes or no.,皮肤是否存在大片色块或色带突变？请回答是或否。,0.505,4,100,0,396,0.01,0.0
+pupil_edge_artifact,Eyes,Are the pupil edges jagged or overly smoothed? Please answer yes or no.,瞳孔边缘是否呈现锯齿或糊化？请回答是或否。,0.5038,395,2,98,5,0.9875,0.98
+contour_misalignment,Geometry,Is the facial contour misaligned with the head pose or neck boundary? Please answer yes or no.,脸部轮廓是否与头部姿态或颈部边界错位？请回答是或否。,0.5,0,100,0,400,0.0,0.0
+teeth_texture,Mouth,Are intra-oral textures such as tooth gaps or gums repetitive or broken? Please answer yes or no.,嘴内纹理（牙缝、齿龈）是否呈现不自然的重复或断裂？请回答是或否。,0.5,0,99,0,397,0.0,0.0
+hair_direction,Hair,Are hair strands inconsistent with overall motion or wind direction? Please answer yes or no.,头发丝走向是否与整体运动或风向不一致？请回答是或否。,0.5,0,100,0,400,0.0,0.0
+sharpening_inconsistency,Color,Are anti-aliasing or sharpening levels inconsistent between the face and the background? Please answer yes or no.,抗锯齿或锐化在脸与背景上的强度是否不一致？请回答是或否。,0.4975,2,99,1,398,0.005,0.01
+blending_feather,Blending,Do the face boundaries show feathering or halos inconsistent with the background? Please answer yes or no.,面部边缘是否出现羽化或晕圈并且与背景不一致？请回答是或否。,0.4963,1,99,1,398,0.0025,0.01
