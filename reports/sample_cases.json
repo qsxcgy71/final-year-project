@@ -1,0 +1,333 @@
+{
+  "question_id": "facial_symmetry",
+  "val": {
+    "tp": [
+      {
+        "video_id": "001_870",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 4,
+        "total": 4,
+        "yes_rate": 1.0,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\001_870\\frame_0000.jpg"
+      },
+      {
+        "video_id": "055_147",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 4,
+        "total": 4,
+        "yes_rate": 1.0,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\055_147\\frame_0000.jpg"
+      },
+      {
+        "video_id": "071_054",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 3,
+        "total": 4,
+        "yes_rate": 0.75,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\071_054\\frame_0000.jpg"
+      },
+      {
+        "video_id": "090_086",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 4,
+        "total": 4,
+        "yes_rate": 1.0,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\090_086\\frame_0000.jpg"
+      }
+    ],
+    "tn": [
+      {
+        "video_id": "011",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\011\\frame_0000.jpg"
+      },
+      {
+        "video_id": "048",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\048\\frame_0000.jpg"
+      },
+      {
+        "video_id": "057",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\057\\frame_0000.jpg"
+      },
+      {
+        "video_id": "065",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\065\\frame_0000.jpg"
+      }
+    ],
+    "fp": [
+      {
+        "video_id": "003",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\003\\frame_0000.jpg"
+      },
+      {
+        "video_id": "269",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\269\\frame_0000.jpg"
+      },
+      {
+        "video_id": "473",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 3,
+        "total": 4,
+        "yes_rate": 0.75,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\473\\frame_0000.jpg"
+      },
+      {
+        "video_id": "773",
+        "split": "val",
+        "label": 0,
+        "method": "real",
+        "yes": 3,
+        "total": 4,
+        "yes_rate": 0.75,
+        "frame": "ffpp_c23\\faces_224\\val\\real\\real\\773\\frame_0000.jpg"
+      }
+    ],
+    "fn": [
+      {
+        "video_id": "002_006",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 1,
+        "total": 4,
+        "yes_rate": 0.25,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\002_006\\frame_0000.jpg"
+      },
+      {
+        "video_id": "014_790",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 1,
+        "total": 4,
+        "yes_rate": 0.25,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\014_790\\frame_0000.jpg"
+      },
+      {
+        "video_id": "029_048",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 1,
+        "total": 4,
+        "yes_rate": 0.25,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\029_048\\frame_0000.jpg"
+      },
+      {
+        "video_id": "037_072",
+        "split": "val",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\val\\fake\\Deepfakes\\037_072\\frame_0000.jpg"
+      }
+    ]
+  },
+  "test": {
+    "tp": [
+      {
+        "video_id": "021_312",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\021_312\\frame_0000.jpg"
+      },
+      {
+        "video_id": "033_097",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\033_097\\frame_0000.jpg"
+      },
+      {
+        "video_id": "040_997",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 4,
+        "total": 4,
+        "yes_rate": 1.0,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\040_997\\frame_0000.jpg"
+      },
+      {
+        "video_id": "041_063",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 3,
+        "total": 4,
+        "yes_rate": 0.75,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\041_063\\frame_0000.jpg"
+      }
+    ],
+    "tn": [
+      {
+        "video_id": "006",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\006\\frame_0000.jpg"
+      },
+      {
+        "video_id": "025",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 1,
+        "total": 4,
+        "yes_rate": 0.25,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\025\\frame_0000.jpg"
+      },
+      {
+        "video_id": "027",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\027\\frame_0000.jpg"
+      },
+      {
+        "video_id": "030",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\030\\frame_0000.jpg"
+      }
+    ],
+    "fp": [
+      {
+        "video_id": "166",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\166\\frame_0000.jpg"
+      },
+      {
+        "video_id": "296",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\296\\frame_0000.jpg"
+      },
+      {
+        "video_id": "906",
+        "split": "test",
+        "label": 0,
+        "method": "real",
+        "yes": 2,
+        "total": 4,
+        "yes_rate": 0.5,
+        "frame": "ffpp_c23\\faces_224\\test\\real\\real\\906\\frame_0000.jpg"
+      }
+    ],
+    "fn": [
+      {
+        "video_id": "026_012",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 1,
+        "total": 4,
+        "yes_rate": 0.25,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\026_012\\frame_0000.jpg"
+      },
+      {
+        "video_id": "072_037",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\072_037\\frame_0000.jpg"
+      },
+      {
+        "video_id": "082_103",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\082_103\\frame_0000.jpg"
+      },
+      {
+        "video_id": "093_121",
+        "split": "test",
+        "label": 1,
+        "method": "Deepfakes",
+        "yes": 0,
+        "total": 4,
+        "yes_rate": 0.0,
+        "frame": "ffpp_c23\\faces_224\\test\\fake\\Deepfakes\\093_121\\frame_0000.jpg"
+      }
+    ]
+  }
+}

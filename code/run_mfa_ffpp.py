@@ -106,7 +106,7 @@ class VideoRecord:
 
 
 def load_metadata(project_root: Path, split: str) -> List[Dict[str, str]]:
-    metadata_path = project_root / "metadata" / "ffpp_c23_split.json"
+    metadata_path = project_root / "data" / "splits" / "ffpp_c23_split.json"
     with metadata_path.open("r", encoding="utf-8") as f:
         entries = json.load(f)
     return [e for e in entries if e["split"] == split]
@@ -246,7 +246,7 @@ def main() -> None:
     parser.add_argument(
         "--progress-log",
         default=None,
-        help="Optional progress log (jsonl). Defaults to metadata/mfa_ffpp_<split>_progress.jsonl",
+        help="Optional progress log (jsonl). Defaults to mfa/ffpp_c23/mfa_ffpp_<split>_progress.jsonl",
     )
     parser.add_argument("--progress-interval", type=int, default=20, help="Print progress every N new videos")
 
@@ -259,7 +259,7 @@ def main() -> None:
 
     questions = load_questions(project_root / args.questions)
 
-    progress_default = f"metadata/mfa_ffpp_{args.split}_progress.jsonl"
+    progress_default = f"mfa/ffpp_c23/mfa_ffpp_{args.split}_progress.jsonl"
     progress_path = resolve_path(project_root, args.progress_log or progress_default)
     progress_path.parent.mkdir(parents=True, exist_ok=True)
     progress_records = load_progress(progress_path)
@@ -334,7 +334,7 @@ def main() -> None:
 
     results = compute_results(progress_records.values(), questions)
 
-    output_prefix = resolve_path(project_root, args.output) if args.output else project_root / "metadata" / f"mfa_ffpp_{args.split}"
+    output_prefix = resolve_path(project_root, args.output) if args.output else project_root / "mfa" / "ffpp_c23" / f"mfa_ffpp_{args.split}"
     output_prefix.parent.mkdir(parents=True, exist_ok=True)
 
     json_path = output_prefix.with_suffix(".json")

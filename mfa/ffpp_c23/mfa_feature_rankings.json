@@ -1,0 +1,729 @@
+{
+  "top_k": 5,
+  "rank_stability": {
+    "spearman": 0.7869890501167393,
+    "kendall_tau": 0.6540699401677285
+  },
+  "ranking": [
+    {
+      "id": "facial_symmetry",
+      "category": "Symmetry",
+      "question_en": "Is facial symmetry noticeably abnormal? Please answer yes or no.",
+      "question_zh": "Is facial symmetry noticeably abnormal? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.61625,
+        "auc": 0.64625,
+        "average_precision": 0.8672707666556569,
+        "r_pb": 0.2368388879571109,
+        "ci95": [
+          0.5871849549501467,
+          0.6453150450498533
+        ],
+        "tp": 109,
+        "tn": 96,
+        "fp": 4,
+        "fn": 291
+      },
+      "test": {
+        "balanced_accuracy": 0.6303634085213032,
+        "auc": 0.6569423558897243,
+        "average_precision": 0.8724442277359921,
+        "r_pb": 0.25801124484374893,
+        "ci95": [
+          0.6025099560509378,
+          0.6582168609916687
+        ],
+        "tp": 116,
+        "tn": 97,
+        "fp": 3,
+        "fn": 283
+      },
+      "avg_balanced_accuracy": 0.6233067042606516,
+      "rank": 1
+    },
+    {
+      "id": "shadow_anomaly",
+      "category": "Lighting",
+      "question_en": "Are nose or chin shadows missing or oddly shaped? Please answer yes or no.",
+      "question_zh": "Are nose or chin shadows missing or oddly shaped? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.62,
+        "auc": 0.6390874999999999,
+        "average_precision": 0.8624510769032799,
+        "r_pb": 0.23585344897394553,
+        "ci95": [
+          0.5945011608107349,
+          0.6454988391892651
+        ],
+        "tp": 104,
+        "tn": 98,
+        "fp": 2,
+        "fn": 296
+      },
+      "test": {
+        "balanced_accuracy": 0.60875,
+        "auc": 0.6392375,
+        "average_precision": 0.8570544676543386,
+        "r_pb": 0.2237781220997841,
+        "ci95": [
+          0.5837891407649897,
+          0.6337108592350104
+        ],
+        "tp": 95,
+        "tn": 98,
+        "fp": 2,
+        "fn": 305
+      },
+      "avg_balanced_accuracy": 0.614375,
+      "rank": 2
+    },
+    {
+      "id": "hairline_artifact",
+      "category": "Hair",
+      "question_en": "Is there smearing or transparency around the hairline? Please answer yes or no.",
+      "question_zh": "Is there smearing or transparency around the hairline? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.57125,
+        "auc": 0.607075,
+        "average_precision": 0.844073253856102,
+        "r_pb": 0.18086559836967264,
+        "ci95": [
+          0.5424505131339116,
+          0.6000494868660885
+        ],
+        "tp": 77,
+        "tn": 95,
+        "fp": 5,
+        "fn": 323
+      },
+      "test": {
+        "balanced_accuracy": 0.5775,
+        "auc": 0.6225375,
+        "average_precision": 0.8515987253487252,
+        "r_pb": 0.20431977225993136,
+        "ci95": [
+          0.5521724028972348,
+          0.6028275971027652
+        ],
+        "tp": 74,
+        "tn": 97,
+        "fp": 3,
+        "fn": 326
+      },
+      "avg_balanced_accuracy": 0.5743750000000001,
+      "rank": 3
+    },
+    {
+      "id": "edge_color_bleeding",
+      "category": "Color",
+      "question_en": "Is there color bleeding along facial edges? Please answer yes or no.",
+      "question_zh": "Is there color bleeding along facial edges? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.55625,
+        "auc": 0.5868749999999999,
+        "average_precision": 0.8359328799526907,
+        "r_pb": 0.16483891871682108,
+        "ci95": [
+          0.5323154309888396,
+          0.5801845690111604
+        ],
+        "tp": 57,
+        "tn": 97,
+        "fp": 3,
+        "fn": 343
+      },
+      "test": {
+        "balanced_accuracy": 0.54625,
+        "auc": 0.588825,
+        "average_precision": 0.8349451207037644,
+        "r_pb": 0.15662181580586398,
+        "ci95": [
+          0.525562727493698,
+          0.566937272506302
+        ],
+        "tp": 45,
+        "tn": 98,
+        "fp": 2,
+        "fn": 355
+      },
+      "avg_balanced_accuracy": 0.55125,
+      "rank": 4
+    },
+    {
+      "id": "feature_perspective",
+      "category": "Geometry",
+      "question_en": "Are facial features perspectively inconsistent, such as unusually tilted eye lines? Please answer yes or no.",
+      "question_zh": "Are facial features perspectively inconsistent, such as unusually tilted eye lines? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.53125,
+        "auc": 0.53575,
+        "average_precision": 0.8187446236559142,
+        "r_pb": 0.10325427223389738,
+        "ci95": [
+          0.5152333885059917,
+          0.5472666114940083
+        ],
+        "tp": 29,
+        "tn": 99,
+        "fp": 1,
+        "fn": 371
+      },
+      "test": {
+        "balanced_accuracy": 0.53875,
+        "auc": 0.5707749999999999,
+        "average_precision": 0.8295,
+        "r_pb": 0.15284037487679208,
+        "ci95": [
+          0.5256482255495677,
+          0.5518517744504322
+        ],
+        "tp": 31,
+        "tn": 100,
+        "fp": 0,
+        "fn": 369
+      },
+      "avg_balanced_accuracy": 0.5349999999999999,
+      "rank": 5
+    },
+    {
+      "id": "compression_inconsistency",
+      "category": "Signal",
+      "question_en": "Is compression blocking stronger on the face than the background? Please answer yes or no.",
+      "question_zh": "Is compression blocking stronger on the face than the background? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.52875,
+        "auc": 0.5245625,
+        "average_precision": 0.8084961112682671,
+        "r_pb": 0.039458153609628316,
+        "ci95": [
+          0.478206464372286,
+          0.5792935356277141
+        ],
+        "tp": 295,
+        "tn": 32,
+        "fp": 68,
+        "fn": 105
+      },
+      "test": {
+        "balanced_accuracy": 0.5287461076934761,
+        "auc": 0.5461887040834409,
+        "average_precision": 0.8217460287177616,
+        "r_pb": 0.057770857424671626,
+        "ci95": [
+          0.4783028711354968,
+          0.5791893442514554
+        ],
+        "tp": 297,
+        "tn": 31,
+        "fp": 68,
+        "fn": 102
+      },
+      "avg_balanced_accuracy": 0.5287480538467381,
+      "rank": 6
+    },
+    {
+      "id": "teeth_boundary_drift",
+      "category": "Mouth",
+      "question_en": "Do tooth boundaries drift in frames where the mouth is speaking or open? Please answer yes or no.",
+      "question_zh": "Do tooth boundaries drift in frames where the mouth is speaking or open? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.5232070707070707,
+        "auc": 0.5312373737373737,
+        "average_precision": 0.8121088409862607,
+        "r_pb": 0.06503019647436019,
+        "ci95": [
+          0.486001082167269,
+          0.5604130592468725
+        ],
+        "tp": 362,
+        "tn": 14,
+        "fp": 85,
+        "fn": 38
+      },
+      "test": {
+        "balanced_accuracy": 0.509748743718593,
+        "auc": 0.5261809045226131,
+        "average_precision": 0.8092177323017316,
+        "r_pb": 0.0308603700043499,
+        "ci95": [
+          0.474644217706045,
+          0.544853269731141
+        ],
+        "tp": 358,
+        "tn": 12,
+        "fp": 88,
+        "fn": 40
+      },
+      "avg_balanced_accuracy": 0.5164779072128318,
+      "rank": 7
+    },
+    {
+      "id": "skin_texture_repeat",
+      "category": "Texture",
+      "question_en": "Do pores or micro-textures repeat or look smeared across different facial regions? Please answer yes or no.",
+      "question_zh": "Do pores or micro-textures repeat or look smeared across different facial regions? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.5125,
+        "auc": 0.5201250000000001,
+        "average_precision": 0.8088095238095238,
+        "r_pb": 0.07873622236652333,
+        "ci95": [
+          0.504849877451962,
+          0.5201501225480379
+        ],
+        "tp": 10,
+        "tn": 100,
+        "fp": 0,
+        "fn": 390
+      },
+      "test": {
+        "balanced_accuracy": 0.5125,
+        "auc": 0.5263749999999999,
+        "average_precision": 0.8110576923076923,
+        "r_pb": 0.08715089238845203,
+        "ci95": [
+          0.504849877451962,
+          0.5201501225480379
+        ],
+        "tp": 10,
+        "tn": 100,
+        "fp": 0,
+        "fn": 390
+      },
+      "avg_balanced_accuracy": 0.5125,
+      "rank": 8
+    },
+    {
+      "id": "feature_proportions",
+      "category": "Symmetry",
+      "question_en": "Are facial feature proportions atypical, such as unusual inter-ocular distance or nose length? Please answer yes or no.",
+      "question_zh": "Are facial feature proportions atypical, such as unusual inter-ocular distance or nose length? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.5097023567337485,
+        "auc": 0.5236768802228412,
+        "average_precision": 0.8112790342073072,
+        "r_pb": 0.07161928571013043,
+        "ci95": [
+          0.4955834489856872,
+          0.5238212644818099
+        ],
+        "tp": 11,
+        "tn": 88,
+        "fp": 1,
+        "fn": 348
+      },
+      "test": {
+        "balanced_accuracy": 0.5152354570637119,
+        "auc": 0.5318559556786704,
+        "average_precision": 0.8148230224684517,
+        "r_pb": 0.09875545265779584,
+        "ci95": [
+          0.5063701121350991,
+          0.5241008019923247
+        ],
+        "tp": 11,
+        "tn": 89,
+        "fp": 0,
+        "fn": 350
+      },
+      "avg_balanced_accuracy": 0.5124689068987303,
+      "rank": 9
+    },
+    {
+      "id": "jawline_seams",
+      "category": "Blending",
+      "question_en": "Are there seam-like artifacts around the jawline or hairline? Please answer yes or no.",
+      "question_zh": "Are there seam-like artifacts around the jawline or hairline? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.50875,
+        "auc": 0.5332874999999999,
+        "average_precision": 0.812189071566731,
+        "r_pb": 0.06959511200043304,
+        "ci95": [
+          0.489049577574326,
+          0.5284504224256741
+        ],
+        "tp": 19,
+        "tn": 97,
+        "fp": 3,
+        "fn": 381
+      },
+      "test": {
+        "balanced_accuracy": 0.5125,
+        "auc": 0.52895,
+        "average_precision": 0.8123357371794871,
+        "r_pb": 0.07433917645547122,
+        "ci95": [
+          0.495428931638588,
+          0.5295710683614119
+        ],
+        "tp": 18,
+        "tn": 98,
+        "fp": 2,
+        "fn": 382
+      },
+      "avg_balanced_accuracy": 0.510625,
+      "rank": 10
+    },
+    {
+      "id": "eye_highlight_mismatch",
+      "category": "Eyes",
+      "question_en": "Do the specular highlights of both eyes mismatch in shape or position? Please answer yes or no.",
+      "question_zh": "Do the specular highlights of both eyes mismatch in shape or position? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.50625,
+        "auc": 0.512625,
+        "average_precision": 0.8057499999999999,
+        "r_pb": 0.05667668120923635,
+        "ci95": [
+          0.5008059809193942,
+          0.5116940190806057
+        ],
+        "tp": 5,
+        "tn": 100,
+        "fp": 0,
+        "fn": 395
+      },
+      "test": {
+        "balanced_accuracy": 0.5125,
+        "auc": 0.53125,
+        "average_precision": 0.8124999999999999,
+        "r_pb": 0.1014044537814173,
+        "ci95": [
+          0.504849877451962,
+          0.5201501225480379
+        ],
+        "tp": 10,
+        "tn": 100,
+        "fp": 0,
+        "fn": 390
+      },
+      "avg_balanced_accuracy": 0.5093749999999999,
+      "rank": 11
+    },
+    {
+      "id": "moire_artifact",
+      "category": "Signal",
+      "question_en": "Are there moiré or checkerboard artifacts in facial regions? Please answer yes or no.",
+      "question_zh": "Are there moiré or checkerboard artifacts in facial regions? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.51375,
+        "auc": 0.5213874999999999,
+        "average_precision": 0.8093636363636363,
+        "r_pb": 0.08156277804801028,
+        "ci95": [
+          0.5057367769437011,
+          0.521763223056299
+        ],
+        "tp": 11,
+        "tn": 100,
+        "fp": 0,
+        "fn": 389
+      },
+      "test": {
+        "balanced_accuracy": 0.50375,
+        "auc": 0.5123749999999999,
+        "average_precision": 0.8027916666666667,
+        "r_pb": 0.031044036471700932,
+        "ci95": [
+          0.49207259473384607,
+          0.5154274052661539
+        ],
+        "tp": 7,
+        "tn": 99,
+        "fp": 1,
+        "fn": 393
+      },
+      "avg_balanced_accuracy": 0.50875,
+      "rank": 12
+    },
+    {
+      "id": "lighting_direction",
+      "category": "Lighting",
+      "question_en": "Is the facial lighting direction inconsistent with the shadows in the background? Please answer yes or no.",
+      "question_zh": "Is the facial lighting direction inconsistent with the shadows in the background? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.51625,
+        "auc": 0.49347499999999994,
+        "average_precision": 0.805875,
+        "r_pb": 0.039073233258228195,
+        "ci95": [
+          0.5075611310431104,
+          0.5249388689568896
+        ],
+        "tp": 13,
+        "tn": 100,
+        "fp": 0,
+        "fn": 387
+      },
+      "test": {
+        "balanced_accuracy": 0.49624999999999997,
+        "auc": 0.4974375,
+        "average_precision": 0.7997336956521739,
+        "r_pb": -0.010711280419443624,
+        "ci95": [
+          0.4780213578742134,
+          0.5144786421257865
+        ],
+        "tp": 9,
+        "tn": 97,
+        "fp": 3,
+        "fn": 391
+      },
+      "avg_balanced_accuracy": 0.50625,
+      "rank": 13
+    },
+    {
+      "id": "skin_color_patches",
+      "category": "Texture",
+      "question_en": "Are there patchy skin tones or abrupt color bands on the face? Please answer yes or no.",
+      "question_zh": "Are there patchy skin tones or abrupt color bands on the face? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.505,
+        "auc": 0.51625,
+        "average_precision": 0.8065,
+        "r_pb": 0.06599545966855686,
+        "ci95": [
+          0.5001245615581775,
+          0.5098754384418225
+        ],
+        "tp": 4,
+        "tn": 100,
+        "fp": 0,
+        "fn": 396
+      },
+      "test": {
+        "balanced_accuracy": 0.50125,
+        "auc": 0.5099625,
+        "average_precision": 0.8042371794871794,
+        "r_pb": 0.04256523632288134,
+        "ci95": [
+          0.49008232594718126,
+          0.5124176740528187
+        ],
+        "tp": 5,
+        "tn": 99,
+        "fp": 1,
+        "fn": 395
+      },
+      "avg_balanced_accuracy": 0.503125,
+      "rank": 14
+    },
+    {
+      "id": "pupil_edge_artifact",
+      "category": "Eyes",
+      "question_en": "Are the pupil edges jagged or overly smoothed? Please answer yes or no.",
+      "question_zh": "Are the pupil edges jagged or overly smoothed? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.50375,
+        "auc": 0.49972500000000003,
+        "average_precision": 0.7999453772839454,
+        "r_pb": -0.0035237490532788506,
+        "ci95": [
+          0.4889893853871189,
+          0.5185106146128812
+        ],
+        "tp": 395,
+        "tn": 2,
+        "fp": 98,
+        "fn": 5
+      },
+      "test": {
+        "balanced_accuracy": 0.5,
+        "auc": 0.498225,
+        "average_precision": 0.7995032540360213,
+        "r_pb": -0.018884739365012455,
+        "ci95": [
+          0.4890981882239694,
+          0.5109018117760307
+        ],
+        "tp": 396,
+        "tn": 1,
+        "fp": 99,
+        "fn": 4
+      },
+      "avg_balanced_accuracy": 0.5018750000000001,
+      "rank": 15
+    },
+    {
+      "id": "contour_misalignment",
+      "category": "Geometry",
+      "question_en": "Is the facial contour misaligned with the head pose or neck boundary? Please answer yes or no.",
+      "question_zh": "Is the facial contour misaligned with the head pose or neck boundary? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.5,
+        "auc": 0.5,
+        "average_precision": 0.8,
+        "r_pb": NaN,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "tp": 0,
+        "tn": 100,
+        "fp": 0,
+        "fn": 400
+      },
+      "test": {
+        "balanced_accuracy": 0.50125,
+        "auc": 0.5025,
+        "average_precision": 0.8009999999999999,
+        "r_pb": 0.030054146238782265,
+        "ci95": [
+          0.4988030644164588,
+          0.5036969355835411
+        ],
+        "tp": 1,
+        "tn": 100,
+        "fp": 0,
+        "fn": 399
+      },
+      "avg_balanced_accuracy": 0.500625,
+      "rank": 16
+    },
+    {
+      "id": "hair_direction",
+      "category": "Hair",
+      "question_en": "Are hair strands inconsistent with overall motion or wind direction? Please answer yes or no.",
+      "question_zh": "Are hair strands inconsistent with overall motion or wind direction? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.5,
+        "auc": 0.495,
+        "average_precision": 0.8,
+        "r_pb": -0.08953229620716907,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "tp": 0,
+        "tn": 100,
+        "fp": 0,
+        "fn": 400
+      },
+      "test": {
+        "balanced_accuracy": 0.50125,
+        "auc": 0.50125,
+        "average_precision": 0.8005,
+        "r_pb": 0.02238307405179228,
+        "ci95": [
+          0.4988030644164588,
+          0.5036969355835411
+        ],
+        "tp": 1,
+        "tn": 100,
+        "fp": 0,
+        "fn": 399
+      },
+      "avg_balanced_accuracy": 0.500625,
+      "rank": 17
+    },
+    {
+      "id": "sharpening_inconsistency",
+      "category": "Color",
+      "question_en": "Are anti-aliasing or sharpening levels inconsistent between the face and the background? Please answer yes or no.",
+      "question_zh": "Are anti-aliasing or sharpening levels inconsistent between the face and the background? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.4975,
+        "auc": 0.49875,
+        "average_precision": 0.8000416666666667,
+        "r_pb": -0.01517111862090097,
+        "ci95": [
+          0.48715473175794843,
+          0.5078452682420516
+        ],
+        "tp": 2,
+        "tn": 99,
+        "fp": 1,
+        "fn": 398
+      },
+      "test": {
+        "balanced_accuracy": 0.50375,
+        "auc": 0.5075,
+        "average_precision": 0.8029999999999999,
+        "r_pb": 0.04830715223119086,
+        "ci95": [
+          0.4995224186879494,
+          0.5079775813120507
+        ],
+        "tp": 3,
+        "tn": 100,
+        "fp": 0,
+        "fn": 397
+      },
+      "avg_balanced_accuracy": 0.500625,
+      "rank": 18
+    },
+    {
+      "id": "teeth_texture",
+      "category": "Mouth",
+      "question_en": "Are intra-oral textures such as tooth gaps or gums repetitive or broken? Please answer yes or no.",
+      "question_zh": "Are intra-oral textures such as tooth gaps or gums repetitive or broken? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.5,
+        "auc": 0.5,
+        "average_precision": 0.8004032258064516,
+        "r_pb": NaN,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "tp": 0,
+        "tn": 99,
+        "fp": 0,
+        "fn": 397
+      },
+      "test": {
+        "balanced_accuracy": 0.5,
+        "auc": 0.5,
+        "average_precision": 0.7995991983967936,
+        "r_pb": NaN,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "tp": 0,
+        "tn": 100,
+        "fp": 0,
+        "fn": 399
+      },
+      "avg_balanced_accuracy": 0.5,
+      "rank": 19
+    },
+    {
+      "id": "blending_feather",
+      "category": "Blending",
+      "question_en": "Do the face boundaries show feathering or halos inconsistent with the background? Please answer yes or no.",
+      "question_zh": "Do the face boundaries show feathering or halos inconsistent with the background? Please answer yes or no.",
+      "val": {
+        "balanced_accuracy": 0.49625313283208017,
+        "auc": 0.49873433583959903,
+        "average_precision": 0.7985997056770182,
+        "r_pb": -0.02830861507128293,
+        "ci95": [
+          0.4861984271645211,
+          0.5063078384996392
+        ],
+        "tp": 1,
+        "tn": 99,
+        "fp": 1,
+        "fn": 398
+      },
+      "test": {
+        "balanced_accuracy": 0.5,
+        "auc": 0.505,
+        "average_precision": 0.802,
+        "r_pb": 0.04490132550669376,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "tp": 0,
+        "tn": 100,
+        "fp": 0,
+        "fn": 400
+      },
+      "avg_balanced_accuracy": 0.4981265664160401,
+      "rank": 20
+    }
+  ]
+}

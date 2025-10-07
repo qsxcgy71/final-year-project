@@ -156,9 +156,9 @@ def main() -> None:
         method_counts = ", ".join(f"{method}={count}" for method, count in sorted(methods.items()))
         print(f"  {split}: {total} ({method_counts})")
 
-    write_json(entries, project_root / "metadata" / "ffpp_c23_split.json")
-    write_csv(entries, project_root / "metadata" / "ffpp_c23_split.csv")
-    print("Metadata written to metadata/ffpp_c23_split.json and .csv")
+    write_json(entries, project_root / "data" / "splits" / "ffpp_c23_split.json")
+    write_csv(entries, project_root / "data" / "splits" / "ffpp_c23_split.csv")
+    print("Metadata written to data/splits/ffpp_c23_split.{json,csv}")
 
 
 if __name__ == "__main__":
