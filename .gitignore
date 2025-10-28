@@ -1,4 +1,4 @@
-# χ²-DFD 深度伪造检测系统 - Git忽略文件
+﻿# χ²-DFD 深度伪造检测系统 - Git忽略文件
 
 # Python缓存文件
 __pycache__/
@@ -73,3 +73,11 @@ data/processed/
 data/ffpp_c23/
 data/celeb_df_v2/
 llava-7b-local-test/
+
+# EFF++ generated caches and annotations
+data/effpp_cache/
+data/effpp_ann/
+
+# Tooling cache
+tools/web_capture/node_modules/
+

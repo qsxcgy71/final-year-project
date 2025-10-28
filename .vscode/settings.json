@@ -1,0 +1,10 @@
+{
+  "chat.promptFilesLocations": [
+    "${workspaceFolder}/PROJECT_ROADMAP.md",
+    "${workspaceFolder}/DECISIONS.md",
+    "${workspaceFolder}/progress.md",
+    "${workspaceFolder}/CHECKPOINT.md",
+    "${workspaceFolder}/docs/MCP.md"
+  ]
+}
+
