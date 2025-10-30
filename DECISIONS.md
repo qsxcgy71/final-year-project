@@ -2,14 +2,21 @@
 
 使用说明：每当形成“可传播的决定”，按下述模板追加一条；非决定性碎片请写入 progress.md。  
 条目模板见本文件正文；热启动读序见 AGENTS.md 与 codex.md。  
-最近更新：2025-10-28
+最近更新：2025-10-29
 
 ## Index
+- [2025-10-29] 需求蓝图：引入 OpenSpec 风格规格与变更骨架
 - [2025-10-28] Stage 1 数据流水线：EFF++ dataloader 与文本指标脚本
 - [2025-10-28] Stage 1 基础合并：整合 roadmap.md → PROJECT_ROADMAP.md
 - [2025-10-28] 初始化：采用 PROJECT_ROADMAP.md 作为唯一权威路线图
 
 ---
+
+## [2025-10-29] 需求蓝图：引入 OpenSpec 风格规格与变更骨架
+**背景**：阶段任务逐渐增多，现有路线图以阶段描述为主，缺乏可由 Agent 直接消费的规格结构，难以在多工具间同步需求。
+**决策**：新增 `OPENSPEC_REQUIREMENTS.md`，提炼 Stage 0~4 的 Requirement/Scenario 验收标准，并给出 `openspec/changes/` 提案骨架，后续任务按 OpenSpec 工作流推进。
+**影响**：需求从阶段叙述转换为规格+场景，可直接驱动 proposal/tasks 生成；为后续初始化 `openspec/` 目录、接入 CLI 提供参考模板。
+**回滚条件**：若团队确认短期内不采用 OpenSpec 工作流，可将该文档归档到 `docs/archive/`，并在 roadmap 中恢复原有描述。
 
 ## [2025-10-28] Stage 1 数据流水线：EFF++ dataloader 与文本指标脚本
 **背景**：Stage 1 剩余工作需要让评测脚本读取图像-文本对，并对注释质量做自动化体检。  
