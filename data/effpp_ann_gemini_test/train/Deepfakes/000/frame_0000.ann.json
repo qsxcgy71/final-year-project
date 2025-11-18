@@ -1,0 +1,41 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, Examine the facial perimeter for unnatural blending artifacts, such as blurry edges, sharp seams, or color shifts where the face meets the head. Note any inconsistencies in skin texture, like overly smooth or grainy areas, or a mismatch in detail/noise compared to adjacent skin regions, indicative of learned face replacement.",
+  "cfad_rationale": "Yes, Examine the facial perimeter for unnatural blending artifacts, such as blurry edges, sharp seams, or color shifts where the face meets the head. Note any inconsistencies in skin texture, like overly smooth or grainy areas, or a mismatch in detail/noise compared to adjacent skin regions, indicative of learned face replacement.",
+  "evidence_tags": [
+    "boundary_blend",
+    "skin_texture"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "Learned face replacement; watch for boundary seams and texture inconsistency.",
+  "source": "api",
+  "pair": {
+    "identity": "000",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "Deepfakes",
+    "split": "train",
+    "video_id": "000_003",
+    "real_frame_path": "data/effpp_cache/crops/train/000/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/train/000/Deepfakes/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": null,
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": null,
+    "max_new_tokens": null,
+    "mode": "chatgpt",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "llm_provider": "gemini",
+    "llm_model_id": "gemini-2.5-flash",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "llm_max_retries": 5,
+    "llm_retry_delay": 5.0,
+    "llm_request_interval": 0.2,
+    "pair_rank": 0
+  }
+}

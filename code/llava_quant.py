@@ -12,9 +12,17 @@ from __future__ import annotations
 import argparse, os, sys, time
 from typing import Optional
 
+os.environ.setdefault("USE_SLOW_TOKENIZERS", "1")
+os.environ.setdefault("TRANSFORMERS_USE_FAST_TOKENIZER", "0")
+
 import torch
 from PIL import Image
-from transformers import LlavaForConditionalGeneration, LlavaProcessor
+from transformers import (
+    AutoTokenizer,
+    CLIPImageProcessor,
+    LlavaForConditionalGeneration,
+    LlavaProcessor,
+)
 try:
     from transformers import BitsAndBytesConfig  # type: ignore
     BNB_AVAILABLE = True
@@ -73,14 +81,16 @@ def build(model_dir: str, quant: str, max_new_tokens: int, force_cpu: bool):
 
     t0 = time.time()
     print('[STEP] 加载处理器 ...')
-    processor = LlavaProcessor.from_pretrained(model_dir)
+    tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=False)
+    image_processor = CLIPImageProcessor.from_pretrained(model_dir)
+    processor = LlavaProcessor(image_processor=image_processor, tokenizer=tokenizer)
     print('[STEP] 加载模型 ...')
     model = LlavaForConditionalGeneration.from_pretrained(
         model_dir,
         torch_dtype=dtype,
         **load_kwargs,
     )
-    if device.type == 'cpu':
+    if load_kwargs.get('device_map') is None:
         model.to(device)
     print(f'[OK] 模型加载完成，用时 {time.time()-t0:.1f}s')
     try:

@@ -1,0 +1,41 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, Look for unnatural blurring or pixelation around mouth corners and nasolabial folds. Notice inconsistent lighting or abrupt shadow changes in these regions, mismatching the face's overall illumination. These artifacts are characteristic of expression transfer.",
+  "cfad_rationale": "Yes, Look for unnatural blurring or pixelation around mouth corners and nasolabial folds. Notice inconsistent lighting or abrupt shadow changes in these regions, mismatching the face's overall illumination. These artifacts are characteristic of expression transfer.",
+  "evidence_tags": [
+    "mouth_artifact",
+    "lighting_shadow"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "Expression transfer; artifacts cluster near mouth corners and nasolabial folds.",
+  "source": "api",
+  "pair": {
+    "identity": "000",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "Face2Face",
+    "split": "train",
+    "video_id": "000_003",
+    "real_frame_path": "data/effpp_cache/crops/train/000/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/train/000/Face2Face/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": null,
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": null,
+    "max_new_tokens": null,
+    "mode": "chatgpt",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "llm_provider": "gemini",
+    "llm_model_id": "gemini-2.5-flash",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "llm_max_retries": 5,
+    "llm_retry_delay": 5.0,
+    "llm_request_interval": 0.2,
+    "pair_rank": 0
+  }
+}

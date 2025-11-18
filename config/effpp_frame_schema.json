@@ -1,0 +1,33 @@
+﻿{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, visible cue...",
+  "cfad_rationale": "Yes, visible cue...",
+  "evidence_tags": [
+    "boundary_blend",
+    "skin_texture"
+  ],
+  "evidence_regions": [
+    {
+      "tag": "boundary_blend",
+      "bbox": [
+        0.35,
+        0.42,
+        0.62,
+        0.78
+      ],
+      "note": "jawline"
+    }
+  ],
+  "technique_summary": "Deepfakes replace target face using a learned source identity and often leave boundary seams and texture mismatch.",
+  "pair": {
+    "identity": "000",
+    "frame_rank": 0,
+    "frame_index": 12,
+    "split": "val",
+    "method": "Deepfakes",
+    "video_id": "000_003",
+    "real_frame_path": "data/effpp_cache/crops/val/000/real/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/val/000/Deepfakes/frame_0000.jpg"
+  }
+}

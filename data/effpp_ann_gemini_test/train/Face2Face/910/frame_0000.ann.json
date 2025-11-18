@@ -1,0 +1,38 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, Manipulated. Look for unnatural lighting and shadow discrepancies around the mouth corners and nasolabial folds. Pixel inconsistencies and blending artifacts are prominent in these areas, indicative of expression transfer, especially during mouth movement.",
+  "cfad_rationale": "Yes, Manipulated. Look for unnatural lighting and shadow discrepancies around the mouth corners and nasolabial folds. Pixel inconsistencies and blending artifacts are prominent in these areas, indicative of expression transfer, especially during mouth movement.",
+  "evidence_tags": [
+    "mouth_artifact",
+    "lighting_shadow"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "Expression transfer; artifacts cluster near mouth corners and nasolabial folds.",
+  "source": "api",
+  "pair": {
+    "identity": "910",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "Face2Face",
+    "split": "train",
+    "video_id": "910_911",
+    "real_frame_path": "data/effpp_cache/crops/train/910/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/train/910/Face2Face/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": null,
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": null,
+    "max_new_tokens": null,
+    "mode": "chatgpt",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "llm_provider": "gemini",
+    "llm_model_id": "gemini-2.5-flash",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "pair_rank": 0
+  }
+}

@@ -1,0 +1,50 @@
+﻿[
+  {
+    "id": "boundary_blend",
+    "description": "Visible seams or halos along the face boundary."
+  },
+  {
+    "id": "skin_texture",
+    "description": "Plastic or over-smoothed skin texture."
+  },
+  {
+    "id": "lighting_shadow",
+    "description": "Lighting or shadows inconsistent with scene context."
+  },
+  {
+    "id": "color_bleed",
+    "description": "Color bleeding along edges or between facial regions."
+  },
+  {
+    "id": "geometry_distortion",
+    "description": "Warped or misaligned facial geometry."
+  },
+  {
+    "id": "hairline_mismatch",
+    "description": "Hairline blending or color mismatch."
+  },
+  {
+    "id": "mouth_artifact",
+    "description": "Artifacts around mouth or teeth motion."
+  },
+  {
+    "id": "eye_highlight",
+    "description": "Inconsistent catchlights or eye reflections."
+  },
+  {
+    "id": "specular_inconsistency",
+    "description": "Specular highlights inconsistent with lighting."
+  },
+  {
+    "id": "detail_smearing",
+    "description": "Fine detail smearing or texture loss."
+  },
+  {
+    "id": "temporal_flicker",
+    "description": "Frame-to-frame flicker traces (describe when visible)."
+  },
+  {
+    "id": "natural_consistency",
+    "description": "Evidence the frame looks authentic and coherent."
+  }
+]

@@ -157,6 +157,7 @@ def main() -> None:
     parser.add_argument("--word-limit", type=int, default=60)
     parser.add_argument("--json-out", type=Path, default=None)
     parser.add_argument("--markdown-out", type=Path, default=None)
+    parser.add_argument("--overwrite", action="store_true", help="Write results to default reports directory.")
     args = parser.parse_args()
 
     dataset = EffppFrameDataset(project_root=args.project_root, split=args.split)
@@ -164,14 +165,22 @@ def main() -> None:
     tag_ids = load_tags(tag_file)
     report = evaluate_annotations(dataset, tag_ids, word_limit=args.word_limit)
 
-    if args.json_out:
-        args.json_out.parent.mkdir(parents=True, exist_ok=True)
-        args.json_out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_out = args.json_out
+    markdown_out = args.markdown_out
+    if args.overwrite:
+        reports_dir = args.project_root / "reports"
+        reports_dir.mkdir(parents=True, exist_ok=True)
+        json_out = reports_dir / f"effpp_annotation_metrics_{args.split}.json"
+        markdown_out = reports_dir / f"effpp_annotation_metrics_{args.split}.md"
+
+    if json_out:
+        json_out.parent.mkdir(parents=True, exist_ok=True)
+        json_out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     else:
         print(json.dumps(report, ensure_ascii=False, indent=2))
 
-    if args.markdown_out:
-        write_markdown(report, args.markdown_out)
+    if markdown_out:
+        write_markdown(report, markdown_out)
 
 
 if __name__ == "__main__":

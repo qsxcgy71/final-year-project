@@ -5,11 +5,34 @@
 鏈€杩戞洿鏂帮細2025-11-08
 
 ## Index
+- [2025-11-16] Stage 1 Gemini 959-999 补齐（官方 key #1）
+- [2025-11-16] Stage 1 Gemini 批次 712-771 尝试（官方 key #2 限额）
 - [2025-11-08] Stage 1 Gemini 批次 065-084 覆盖
 - [2025-10-30] Stage 1 QA 与解释通路确认
 - [2025-10-28] Stage 1 鏁版嵁娴佹按绾匡細EFF++ dataloader 涓庢枃鏈寚鏍囪剼鏈?- [2025-10-28] Stage 1 鍩虹鍚堝苟锛氭暣鍚?roadmap.md 鈫?PROJECT_ROADMAP.md
 - [2025-10-28] 鍒濆鍖栵細閲囩敤 PROJECT_ROADMAP.md 浣滀负鍞竴鏉冨▉璺嚎鍥?
 ---
+
+## [2025-11-16] Stage 1 Gemini 批次 712-999 推进（官方 key #1/#2 额度耗尽）
+**背景**：用户要求“继续使用第一个官方 key 跑任务，若达到每日上限再切换第二个 key”；现存缺口自 712 起，`missing_chunks.txt` 仍是占位，需要实时统计。
+**决策**：保持 `.env` 仅含官方 key（`LLM_API_BASE_GEMINI/LLM_API_KEY` 置空），分批执行  
+1) `python code/effpp_explain.py --mode chatgpt --chatgpt-provider gemini --chatgpt-model gemini-2.5-flash --chatgpt-request-interval 0 --chatgpt-max-retries 10 --chatgpt-retry-delay 2.0 --workers 3 --max-frames 16 --identities 713..774`（key#1）  
+2) 同参数依次覆盖 `775..834`、`835..894`、`895..954`。  
+3) 当 key#1 在 `955..999` 批次 1400s 左右抛出 `RESOURCE_EXHAUSTED (429)` 后，清空 `GEMINI_API_KEY` 并让 `GEMINI_API_KEY_2` 单独生效，再次尝试 `959..999` —— 立即返回同样的 429。
+**观察**：key#1 成功刷新 713-958 共 246 个身份（覆盖度从 712/1000 提升到 967/1000），run_meta 记录 `llm_active_key_index=0`；`missing` 列表现仅剩 33 个身份：`959-969`、`974-982`、`990-999`。key#2 启用后立即报 `GenerateRequestsPerDayPerProjectPerModel limit=0`，未能产生新文件。
+**影响面**：Stage 1 剩余 33 个身份仍为 placeholder；第二把官方 key 同样无配额，可选动作只有等待次日配额或允许切换回第三方代理。
+**后续**：一旦任一官方 key 恢复，可直接用上面命令行针对缺口区间（959-999）补齐，再运行 `code/eval_effpp_annotations.py` 做 QA。若恢复第三方代理，需要在 `.env` 恢复 `LLM_API_BASE_GEMINI/LLM_API_KEY` 并将 `--chatgpt-force-proxy` 设为需要的模式。
+**回滚条件**：若需撤销个别身份的真实解释，可删除对应 `data/effpp_ann/*/*/<id>/` 并用 placeholder 模式重写。
+
+## [2025-11-16] Stage 1 Gemini 959-999 补齐（官方 key #1）
+**背景**：用户再次要求“接着跑 80 个身份验证”，此时缺口仅剩 33 个（959-969、974-982、983-984、989-999），且仍禁止使用第三方中转。
+**决策**：维持仅官方 key 的环境，执行  
+`python code/effpp_explain.py --mode chatgpt --chatgpt-provider gemini --chatgpt-model gemini-2.5-flash --chatgpt-request-interval 0 --chatgpt-max-retries 10 --chatgpt-retry-delay 2.0 --workers 3 --max-frames 16 --identities 959 960 … 999`。首轮处理到 994-999 时一条响应 `candidates=[]` 触发 “Google Gemini API returned empty content” 异常，随后对剩余 6 个身份再次运行相同命令完成补写。
+**观察**：`/data/effpp_ann/*/*/<id>/frame_0000.ann.json` 全部带 `source=api` 且 `run_meta.llm_provider=gemini`，脚本统计 `missing_count=0`；日志显示 key#1 仍可工作但偶尔返回空候选，使用重试即可恢复。
+**影响面**：Stage 1 现已覆盖 1,000 个身份，可转入 `eval_effpp_annotations.py` 与 QA 面板刷新；`missing_chunks.txt` 可作为历史记录或清理。
+**后续**：运行 `python code/eval_effpp_annotations.py` 刷新指标，再在 progress/PROJECT_ROADMAP 中记录 Stage 1 Exit，最后进入 Stage 2。
+**回滚条件**：若需恢复 placeholder，可移除对应 ann 目录并用 placeholder 模式重生成。
+
 
 ## [2025-10-28] Stage 1 鏁版嵁娴佹按绾匡細EFF++ dataloader 涓庢枃鏈寚鏍囪剼鏈?**鑳屾櫙**锛歋tage 1 鍓╀綑宸ヤ綔闇€瑕佽璇勬祴鑴氭湰璇诲彇鍥惧儚-鏂囨湰瀵癸紝骞跺娉ㄩ噴璐ㄩ噺鍋氳嚜鍔ㄥ寲浣撴銆? 
 **鍐崇瓥**锛氭柊澧?`code/effpp_dataset.py`锛堝抚绾?Dataset + CLI锛変笌 `code/eval_effpp_annotations.py`锛圷es/No銆佽瘝鏁般€佹爣绛惧悎娉曟€х粺璁★紝杈撳嚭 `reports/effpp_annotation_metrics.{json,md}`锛夈€? 

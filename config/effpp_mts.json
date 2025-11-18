@@ -1,0 +1,7 @@
+﻿{
+  "original": "",
+  "Deepfakes": "Learned face replacement; watch for boundary seams and texture inconsistency.",
+  "Face2Face": "Expression transfer; artifacts cluster near mouth corners and nasolabial folds.",
+  "FaceSwap": "Graphics-based whole face swap; jawline and hairline often misalign or show color mismatch.",
+  "NeuralTextures": "Neural texture rendering; specular highlights and fine detail may smear or flicker."
+}

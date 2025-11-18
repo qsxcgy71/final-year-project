@@ -1,0 +1,41 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, Look for unnatural specular highlights that flicker, shift inconsistently, or appear painted on. Observe fine details like skin pores, hair, and wrinkles; they may be smeared, blurred, or overly smoothed, particularly during motion or changes in expression.",
+  "cfad_rationale": "Yes, Look for unnatural specular highlights that flicker, shift inconsistently, or appear painted on. Observe fine details like skin pores, hair, and wrinkles; they may be smeared, blurred, or overly smoothed, particularly during motion or changes in expression.",
+  "evidence_tags": [
+    "specular_inconsistency",
+    "detail_smearing"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "Neural texture rendering; specular highlights and fine detail may smear or flicker.",
+  "source": "api",
+  "pair": {
+    "identity": "000",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "NeuralTextures",
+    "split": "train",
+    "video_id": "000_003",
+    "real_frame_path": "data/effpp_cache/crops/train/000/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/train/000/NeuralTextures/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": null,
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": null,
+    "max_new_tokens": null,
+    "mode": "chatgpt",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "llm_provider": "gemini",
+    "llm_model_id": "gemini-2.5-flash",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "llm_max_retries": 5,
+    "llm_retry_delay": 5.0,
+    "llm_request_interval": 0.2,
+    "pair_rank": 0
+  }
+}

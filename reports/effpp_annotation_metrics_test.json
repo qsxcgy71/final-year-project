@@ -1,0 +1,66 @@
+{
+  "summary": {
+    "split": "test",
+    "num_samples": 7987,
+    "num_identities": 416,
+    "counts_by_split_method": {
+      "test/Deepfakes": 1600,
+      "test/Face2Face": 1600,
+      "test/FaceSwap": 1591,
+      "test/NeuralTextures": 1600,
+      "test/original": 1596
+    }
+  },
+  "word_limit": 60,
+  "average_word_count": 3.0,
+  "overall": {
+    "total": 7987,
+    "yes_no_ok": 7987,
+    "manipulated_consistent": 7987,
+    "word_limit_ok": 7987,
+    "tag_count_ok": 7987,
+    "tag_vocab_ok": 7987
+  },
+  "per_method": {
+    "Deepfakes": {
+      "total": 1600,
+      "yes_no_ok": 1600,
+      "manipulated_consistent": 1600,
+      "word_limit_ok": 1600,
+      "tag_count_ok": 1600,
+      "tag_vocab_ok": 1600
+    },
+    "Face2Face": {
+      "total": 1600,
+      "yes_no_ok": 1600,
+      "manipulated_consistent": 1600,
+      "word_limit_ok": 1600,
+      "tag_count_ok": 1600,
+      "tag_vocab_ok": 1600
+    },
+    "FaceSwap": {
+      "total": 1591,
+      "yes_no_ok": 1591,
+      "manipulated_consistent": 1591,
+      "word_limit_ok": 1591,
+      "tag_count_ok": 1591,
+      "tag_vocab_ok": 1591
+    },
+    "NeuralTextures": {
+      "total": 1600,
+      "yes_no_ok": 1600,
+      "manipulated_consistent": 1600,
+      "word_limit_ok": 1600,
+      "tag_count_ok": 1600,
+      "tag_vocab_ok": 1600
+    },
+    "original": {
+      "total": 1596,
+      "yes_no_ok": 1596,
+      "manipulated_consistent": 1596,
+      "word_limit_ok": 1596,
+      "tag_count_ok": 1596,
+      "tag_vocab_ok": 1596
+    }
+  }
+}

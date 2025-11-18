@@ -200,19 +200,22 @@ Question: Is this image manipulated?
 
 度量（Stage 1 的硬指标）
 
-- 成对完整率 ≥ 99%（伪造帧均有真实对）。
-- 前缀合规率 = 100%（Yes|No + 固定问句）。
-- MTS 一致性 = 100%（summary 与 method 匹配）。
-- CFAD 结构性覆盖 ≥ 95%（文本同时含部位词与伪迹词）。
-- 真实帧自然线索率 ≥ 95%（含“纹理连贯/光照一致/边界自然/阴影连续”等）。
-- 长度约束：伪造 ≤ 60 词；真实 ≤ 40 词。
+- [x] 成对完整率 ≥ 99%（伪造帧均有真实对）。
+- [x] 前缀合规率 = 100%（Yes|No + 固定问句）。
+- [x] MTS 一致性 = 100%（summary 与 method 匹配）。
+- [x] CFAD 结构性覆盖 ≥ 95%（文本同时含部位词与伪迹词）。
+- [x] 真实帧自然线索率 ≥ 95%（含“纹理连贯/光照一致/边界自然/阴影连续”等）。
+- [x] 长度约束：伪造 ≤ 60 词；真实 ≤ 40 
+
+
+
 
 退出条件（通过即进入 Stage 2）
 
-- 三个 split 的 data/effpp_ann/.../*.ann.json 全量生成并通过 Schema 校验；
-- effpp_annotation_metrics_{split} 满足上表阈值；
-- effpp_alignment_report.md 抽查通过（对齐一致、前缀一致、MTS‑method 一致、CFAD 含位置信息）；
-- 所有入口支持 --seed，并将版本/依赖写入 run_meta；评测脚本能读图像‑文本对输出指标。
+- [x] 三个 split 的 data/effpp_ann/.../*.ann.json 全量生成并通过 Schema 校验；
+- [x] effpp_annotation_metrics_{split} 满足上表阈值；
+- [x] effpp_alignment_report.md 抽查通过（对齐一致、前缀一致、MTS‑method 一致、CFAD 含位置信息）；
+- [x] 所有入口支持 --seed，并将版本/依赖写入 run_meta；评测脚本能读图像‑文本对输出指标。
 ### Stage 2 - Prompt Injection（PEFT）先导对齐
 
 目标：在冻结大部参数下，用可学习提示向量快速把模型对齐到 EFF++ 的文本与视觉分布。
@@ -221,6 +224,8 @@ Question: Is this image manipulated?
 - [ ] 训练/推理入口与 PEFT 配置（学习率、长度、插入位点）
 - [ ] 在 val 上做 学习率 × 提示长度 网格；记录收敛曲线与效率
 - [ ] 以 Stage 1 基线做“分类 + 解释对齐”双指标对比
+
+
 - [ ] 将增量代价写入 eval/effpp_peft/metrics.json 与 DECISIONS.md
 
 退出条件：

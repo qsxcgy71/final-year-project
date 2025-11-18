@@ -1,0 +1,38 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": false,
+  "a": "No, The face shows natural skin texture and consistent feature details. Lighting and shadows accurately define facial contours, matching the apparent light source. No inconsistencies or abrupt transitions are observed, suggesting a natural, unaltered image.",
+  "cfad_rationale": "No, The face shows natural skin texture and consistent feature details. Lighting and shadows accurately define facial contours, matching the apparent light source. No inconsistencies or abrupt transitions are observed, suggesting a natural, unaltered image.",
+  "evidence_tags": [
+    "natural_consistency",
+    "lighting_shadow"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "",
+  "source": "api",
+  "pair": {
+    "identity": "910",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "original",
+    "split": "train",
+    "video_id": "910",
+    "real_frame_path": "data/effpp_cache/crops/train/910/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/train/910/original/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": null,
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": null,
+    "max_new_tokens": null,
+    "mode": "chatgpt",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "llm_provider": "gemini",
+    "llm_model_id": "gemini-2.5-flash",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    "pair_rank": 0
+  }
+}

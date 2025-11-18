@@ -1,0 +1,34 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, The man's face appears to be photoshopped, as there are no visible boundary seams or lighting mismatch. However, there is a texture loss in the forehead area, and the man's face appears to be warped. Additionally, the color bleed in the background suggests that the image may",
+  "cfad_rationale": "Yes, The man's face appears to be photoshopped, as there are no visible boundary seams or lighting mismatch. However, there is a texture loss in the forehead area, and the man's face appears to be warped. Additionally, the color bleed in the background suggests that the image may",
+  "evidence_tags": [
+    "boundary_blend",
+    "skin_texture"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "Learned face replacement; watch for boundary seams and texture inconsistency.",
+  "pair": {
+    "identity": "910",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "Deepfakes",
+    "split": "test",
+    "video_id": "910_911",
+    "real_frame_path": "data/effpp_cache/crops/train/910/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/test/910/Deepfakes/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": "llava-1.5-7b-hf",
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": "none",
+    "max_new_tokens": 64,
+    "mode": "llava",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "pair_rank": 0
+  }
+}

@@ -29,7 +29,7 @@ except (ImportError, OSError):  # pragma: no cover
     Dataset = object  # type: ignore
 
 
-SUPPORTED_METHODS = ["real", "Deepfakes", "Face2Face", "FaceSwap", "NeuralTextures"]
+SUPPORTED_METHODS = ["original", "Deepfakes", "Face2Face", "FaceSwap", "NeuralTextures"]
 
 
 @dataclass
@@ -103,7 +103,8 @@ class EffppFrameDataset(Dataset):  # type: ignore[misc]
         self.samples: List[EffppFrameSample] = []
         for ann_path in _iter_annotation_files(self.base_dir, split):
             parts = ann_path.relative_to(self.base_dir).parts
-            method, identity, filename = parts[1], parts[2], parts[3]
+            raw_method, identity, filename = parts[1], parts[2], parts[3]
+            method = "original" if raw_method == "real" else raw_method
             if method not in self.methods:
                 continue
             if self.identities is not None and identity not in self.identities:

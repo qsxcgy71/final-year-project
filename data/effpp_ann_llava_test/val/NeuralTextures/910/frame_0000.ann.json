@@ -1,0 +1,34 @@
+{
+  "q": "Is this image manipulated?",
+  "manipulated": true,
+  "a": "Yes, The man's face appears to be manipulated, with a noticeable boundary seam around his eyes. The lighting in the image is mismatched, causing a discrepancy in the shadows and highlights. Additionally, the texture of the man's face appears to be slightly blurred,",
+  "cfad_rationale": "Yes, The man's face appears to be manipulated, with a noticeable boundary seam around his eyes. The lighting in the image is mismatched, causing a discrepancy in the shadows and highlights. Additionally, the texture of the man's face appears to be slightly blurred,",
+  "evidence_tags": [
+    "specular_inconsistency",
+    "detail_smearing"
+  ],
+  "evidence_regions": [],
+  "technique_summary": "Neural texture rendering; specular highlights and fine detail may smear or flicker.",
+  "pair": {
+    "identity": "910",
+    "frame_rank": 0,
+    "frame_index": 0,
+    "method": "NeuralTextures",
+    "split": "val",
+    "video_id": "910_911",
+    "real_frame_path": "data/effpp_cache/crops/train/910/original/frame_0000.jpg",
+    "target_frame_path": "data/effpp_cache/crops/val/910/NeuralTextures/frame_0000.jpg"
+  },
+  "run_meta": {
+    "k": 128,
+    "seed": 42,
+    "llava_model_id": "llava-1.5-7b-hf",
+    "retinaface_ckpt": "insightface/buffalo_l",
+    "llava_quant": "none",
+    "max_new_tokens": 64,
+    "mode": "llava",
+    "torch": "2.4.0+cu121",
+    "cuda": "12.1",
+    "pair_rank": 0
+  }
+}
